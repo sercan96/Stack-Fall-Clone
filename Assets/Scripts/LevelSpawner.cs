@@ -18,7 +18,6 @@ public class LevelSpawner : MonoBehaviour
     private float _obstacleRotY;
     private int _randomNumber;
     public int levelNo;
-    private int randomNumber;
 
     void OnEnable()
     {
@@ -83,37 +82,36 @@ public class LevelSpawner : MonoBehaviour
 
     public void LevelingSystem()
     {
-       
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 20; i++)
         {
             for (int j = 0; j < 4; j++)
             {
                 if (levelNo >= 0 && levelNo < 5) // içerisine atılan o 4 objeleri random bir şekilde oluşturuyoruz.
                 {
-                    CreateObstaclePrefab(0, 2);
+                    CreateObstaclePrefab(0, 2, 0);
                 }
 
                 if (levelNo >= 5 && levelNo < 10)
                 {
-                    CreateObstaclePrefab(1, 3);
+                    CreateObstaclePrefab(0, 3,Random.Range(1, 4));
                 }
                 if (levelNo >= 10 && levelNo < 20)
                 {
-                    CreateObstaclePrefab(0, 4);
+                    CreateObstaclePrefab(1, 3,Random.Range(1, 4));
 
                 }
                 if (levelNo >= 20 && levelNo < 25)
                 {
-                    CreateObstaclePrefab(1, 4);
+                    CreateObstaclePrefab(1, 4,Random.Range(1, 4));
                 
                 }
                 if (levelNo >= 25 && levelNo < 30)
                 {
-                    CreateObstaclePrefab(2, 4);
+                    CreateObstaclePrefab(2, 3,Random.Range(1, 4));
                 }
                 if (levelNo >= 30 && levelNo < 40)
                 {
-                    CreateObstaclePrefab(3, 4);
+                    CreateObstaclePrefab(2, 4,Random.Range(1, 4));
                 }
             }
         }
@@ -121,19 +119,17 @@ public class LevelSpawner : MonoBehaviour
         
     }
 
-    private void CreateObstaclePrefab(int randomNumber1, int randomNumber2)
+    private void CreateObstaclePrefab(int randomNumber1, int randomNumber2,int randomRotateNumber)
     {
-        randomNumber = Random.Range(1, 4);
-                    
         Instantiate(obstaclePrefab[Random.Range(randomNumber1,randomNumber2)],new Vector3(0f,_obstaclePosY,0f),
-            Quaternion.Euler(0f,_obstacleRotY *8f+randomNumber*90f,0f),_rotateManagerParentObject.transform);
+            Quaternion.Euler(0f,_obstacleRotY *8f+randomRotateNumber*90f,0f),_rotateManagerParentObject.transform);
                     
         _obstaclePosY -= 0.5f;  _obstacleRotY += 0.5f;
     }
     
     private void CreateWinPrefab()
     {
-        Instantiate(winprefab, new Vector3(0f, -8f, 0f), Quaternion.identity, transform);
+        Instantiate(winprefab);
     }
     
     public void IncreaseLevelNo()

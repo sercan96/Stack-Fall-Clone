@@ -12,6 +12,7 @@ public class CameraManager : MonoBehaviour
     public CinemachineVirtualCamera gameplayCam;
     public CinemachineVirtualCamera successCam;
     public CinemachineVirtualCamera failedCam;
+    
 
     void OnEnable()
     {

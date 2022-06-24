@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6286621851326406430}
   - component: {fileID: 5467089847993838569}
   - component: {fileID: 781722939095087875}
-  - component: {fileID: 2930423554673030811}
+  - component: {fileID: 3610918506915787864}
   m_Layer: 0
   m_Name: 4
   m_TagString: enemy
@@ -112,7 +112,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2930423554673030811
+--- !u!114 &3610918506915787864
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6286621851328594384}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b8d01a1a3870024f916cc94be1071e5, type: 3}
+  m_Script: {fileID: 11500000, guid: b9d25ab73f4001544b9e2207a3570291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6286621851328594392
@@ -133,7 +133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6286621851328306680}
-  - component: {fileID: 6358130762992612588}
+  - component: {fileID: 7736382817519139745}
   m_Layer: 0
   m_Name: flower 3
   m_TagString: Untagged
@@ -159,7 +159,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6358130762992612588
+--- !u!114 &7736382817519139745
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,14 +168,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6286621851328594392}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78d0cfe09a5dfb94e8b44e9e93a39f57, type: 3}
+  m_Script: {fileID: 11500000, guid: 65f63d3a59109d24caca704a008c0dcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacles:
-  - {fileID: 9025054570984106336}
-  - {fileID: 5391459635313757497}
-  - {fileID: 1835327286541275351}
-  - {fileID: 2930423554673030811}
+  _obstacles:
+  - {fileID: 5279388913440816083}
+  - {fileID: 5917820838747299748}
+  - {fileID: 72655178120684655}
+  - {fileID: 3610918506915787864}
 --- !u!1 &6286621851328594394
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 6286621851326406424}
   - component: {fileID: 5353272622520246023}
   - component: {fileID: 185210861187507061}
-  - component: {fileID: 9025054570984106336}
+  - component: {fileID: 5279388913440816083}
   m_Layer: 0
   m_Name: 1
   m_TagString: plane
@@ -288,7 +288,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &9025054570984106336
+--- !u!114 &5279388913440816083
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6286621851328594394}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b8d01a1a3870024f916cc94be1071e5, type: 3}
+  m_Script: {fileID: 11500000, guid: b9d25ab73f4001544b9e2207a3570291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6286621851328594396
@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 6286621851326406426}
   - component: {fileID: 4106452732188098806}
   - component: {fileID: 1819598626958298394}
-  - component: {fileID: 5391459635313757497}
+  - component: {fileID: 5917820838747299748}
   m_Layer: 0
   m_Name: 2
   m_TagString: plane
@@ -412,7 +412,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5391459635313757497
+--- !u!114 &5917820838747299748
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -421,7 +421,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6286621851328594396}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b8d01a1a3870024f916cc94be1071e5, type: 3}
+  m_Script: {fileID: 11500000, guid: b9d25ab73f4001544b9e2207a3570291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6286621851328594398
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 6286621851326406428}
   - component: {fileID: 5233913772749651960}
   - component: {fileID: 1414601982460469128}
-  - component: {fileID: 1835327286541275351}
+  - component: {fileID: 72655178120684655}
   m_Layer: 0
   m_Name: 3
   m_TagString: plane
@@ -536,7 +536,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1835327286541275351
+--- !u!114 &72655178120684655
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -545,6 +545,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6286621851328594398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b8d01a1a3870024f916cc94be1071e5, type: 3}
+  m_Script: {fileID: 11500000, guid: b9d25ab73f4001544b9e2207a3570291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
