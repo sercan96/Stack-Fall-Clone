@@ -16,13 +16,13 @@ public class CameraManager : MonoBehaviour
     void OnEnable()
     {
         EventManager.onLevelSuccess += SuccessCamManager;
-        EventManager.onLevelFailed += RunDelay;
+        EventManager.onLevelFailed += RunDelayToFailedCamManager;
     }
 
     void OnDisable()
     {
         EventManager.onLevelSuccess -= SuccessCamManager;
-        EventManager.onLevelFailed -= RunDelay;
+        EventManager.onLevelFailed -= RunDelayToFailedCamManager;
     }
     void Awake()
     {
@@ -66,7 +66,7 @@ public class CameraManager : MonoBehaviour
         gameplayCam.Priority = 10;
     }
     
-    private void RunDelay()
+    private void RunDelayToFailedCamManager()
     {
         Invoke("FailedCamManager",0.5f);
     }

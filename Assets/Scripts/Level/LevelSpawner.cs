@@ -12,12 +12,12 @@ public class LevelSpawner : MonoBehaviour
     public GameObject[] obstacleModel;
     public GameObject playerPrefab;
     public GameObject rotateManagerPrefab;
-    private GameObject _rotateManagerParentObject;
     public GameObject cylinderObject;
     public Material plateMat;
     public Material baseMat;
     public int levelNo;
     
+    private GameObject _rotateManagerParentObject;
     private GameObject _myPlayerPrefab;
     private float _obstaclePosY;
     private float _obstacleRotY;

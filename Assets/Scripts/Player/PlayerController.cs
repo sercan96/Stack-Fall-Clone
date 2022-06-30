@@ -19,13 +19,15 @@ public class PlayerController : MonoBehaviour
     public int totalObstacleNumber;
     public GameObject explosionParticle;
     
-    private bool _ishit ;
+ 
     private Rigidbody _rigidbody;
+    private LevelSpawner _levelSpawner;
+    private bool _ishit ;
     private float _currentTime;
     private bool _gameState;
     private bool _invinsableState;
     
-    private LevelSpawner _levelSpawner;
+
 
     
     void Awake()
