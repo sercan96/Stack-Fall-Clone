@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
 
     public int currentObstacleNumber;
     public int totalObstacleNumber;
+    public GameObject explosionParticle;
     
     private bool _ishit ;
     private Rigidbody _rigidbody;
@@ -49,7 +50,7 @@ public class PlayerController : MonoBehaviour
     
     public void PlayerStates()
     {
-        if (playerState == PlayerStateMachine.PlayerState .Playing)
+        if (playerState == PlayerStateMachine.PlayerState .Playing || playerState == PlayerStateMachine.PlayerState.Finish)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
@@ -110,10 +111,11 @@ public class PlayerController : MonoBehaviour
                 GameUI.Instance.InvictableObj.SetActive(true);
                 // Destroy(collision.transform.parent.gameObject);
             }
-            else if((collision.gameObject.CompareTag("plane") || collision.gameObject.CompareTag("enemy")) && _currentTime >= 0 && invinsibleParticle.activeInHierarchy)
+            else if((collision.gameObject.CompareTag("plane") || collision.gameObject.CompareTag("enemy"))
+                    && _currentTime >= 0 && invinsibleParticle.activeInHierarchy)
             {
                 _invinsableState = true;
-                Debug.Log("Invictable current neden girmiyor..... : " + _currentTime);
+               // Debug.Log("Invictable current neden girmiyor..... : " + _currentTime);
                 collision.transform.parent.GetComponent<ObstacleController>().ShatterAllObstacles(); // Parçalama methodu
                 ScoreManager.Instance.IncreaseScore(2); // 2 artsın
                 AudioManager.Instance.PlayClipFx(idestory,0.5f);
@@ -124,6 +126,7 @@ public class PlayerController : MonoBehaviour
                 playerState = PlayerStateMachine.PlayerState.Died;
                 AudioManager.Instance.PlayClipFx(death,0.5f);
                 _gameState = false;
+                explosionParticle.SetActive(true);
 
                 #region Comment Line
                 // GameManager.instance._loseCanvas.SetActive(true);
@@ -171,7 +174,7 @@ public class PlayerController : MonoBehaviour
                 _currentTime += Time.deltaTime*1.5f;
                 GameUI.Instance.InvictableSlider.color = Color.white;
                 GameUI.Instance.InvictableSlider.fillAmount = _currentTime  / 1f;
-                Debug.Log("!invinsibleParticle" +_currentTime);
+                //Debug.Log("!invinsibleParticle" +_currentTime);
             }
         
             else if (GameUI.Instance.InvictableObj.activeInHierarchy && _invinsableState)
@@ -186,7 +189,7 @@ public class PlayerController : MonoBehaviour
                 }
             
                 _currentTime -= Time.deltaTime*0.3f;
-                Debug.Log("invinsibleParticle : "+ _currentTime);
+               // Debug.Log("invinsibleParticle : "+ _currentTime);
                 GameUI.Instance.InvictableSlider.color = Color.red;
                 GameUI.Instance.InvictableSlider.fillAmount = _currentTime;
             }
