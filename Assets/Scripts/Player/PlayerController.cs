@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
         if (!_gameState) return;
         MouseClick();
     }
-    public void MouseClick()
+    private void MouseClick()
     {
         if (_ishit)
         {
@@ -154,7 +154,7 @@ public class PlayerController : MonoBehaviour
     }
     
     
-    public void InvinsableSlider()
+    private void InvinsableSlider()
     {
         if (_ishit)
         {

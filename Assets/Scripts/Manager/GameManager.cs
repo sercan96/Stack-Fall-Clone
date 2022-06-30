@@ -24,14 +24,14 @@ public class GameManager : MonoBehaviour
       instance = this; // İNSTANCE BU SCRİPTİN BAĞLI OLDUĞU OBJEYE EŞİTTİR!!
    }
    
-   public void WinButtonClick()
+   private void WinButtonClick()
    {
       _winCanvas.SetActive(false);
       levelSpawner.NextLevel();
       // levelSpawner.playerController.playerState = PlayerStateMachine.PlayerState.Finish;
        //FindObjectOfType<PlayerController>().playerState = PlayerStateMachine.PlayerState.Finish;
    }
-   public void LoseButtonClick()
+   private void LoseButtonClick()
    {
       _loseCanvas.SetActive(false);
       levelSpawner.RestartLevel();

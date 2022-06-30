@@ -125,7 +125,7 @@ public class LevelSpawner : MonoBehaviour
 
     private void NumberOfObstacleToBeCreated()
     {
-       
+        #region NumberOfObstacleToBeCreated
         if (levelNo >= 0 && levelNo < 5)
         {
             _numberOfObstacle = 5;
@@ -162,6 +162,7 @@ public class LevelSpawner : MonoBehaviour
             cylinderObject.transform.position = new Vector3(0f, -17.5f, 0.05f);
             cylinderObject.transform.localScale = new Vector3(0.9f, -23.38f, 0.92f);
         }
+        #endregion
     }
 
     private void CreateObstaclePrefab(int randomNumber1, int randomNumber2,int randomRotateNumber)
@@ -174,7 +175,7 @@ public class LevelSpawner : MonoBehaviour
     
     private void CreateWinPrefab()
     {
-        Instantiate(winprefab,transform);
+        Instantiate(winprefab,_rotateManagerParentObject.transform);
     }
     
     public void NextLevel()
@@ -188,18 +189,19 @@ public class LevelSpawner : MonoBehaviour
         SceneManager.LoadScene("MyGameScene");
     }
 
-    public void CreateRotateObject()
+    private void CreateRotateObject()
     {
         _rotateManagerParentObject = Instantiate(rotateManagerPrefab,transform);
         Instantiate(cylinderObject,transform);
     }
     
-    public void CreatePlayer() // oluşturulan prefabın referansını aldık.
+    private void CreatePlayer() // oluşturulan prefabın referansını aldık.
     {
         _myPlayerPrefab = Instantiate(playerPrefab,transform);
         playerController = _myPlayerPrefab.GetComponent<PlayerController>();
     }
 
+    #region DestroyAllObject
     // public void DestroyAllChild()
     // {
     //     foreach (Transform child in transform)
@@ -209,8 +211,7 @@ public class LevelSpawner : MonoBehaviour
     //
     //     ResetPos();
     // }
-    
-    
+    #endregion
 
-    
 }
+ 

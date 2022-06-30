@@ -34,7 +34,7 @@ public class CameraManager : MonoBehaviour
         FollowPlayerWithCam();
     }
 
-    public void FollowPlayerWithCam()
+    private void FollowPlayerWithCam()
     {
         if (_playerTransform != null) 
         {
@@ -43,24 +43,23 @@ public class CameraManager : MonoBehaviour
         gameplayCam.Follow = _playerTransform;
         gameplayCam.LookAt = _playerTransform;
     }
-
-    public void ResetCamPos()
-    {
-        gameplayCam.transform.position = new Vector3(0f, 6f, -15f);
-    }
-    public void GameplayCamManager()
+    
+    private void GameplayCamManager()
     {
         gameplayCam.Priority = 12;
         successCam.Priority = 10;
         failedCam.Priority = 10;
     }
-    public void SuccessCamManager()
+    private void SuccessCamManager()
     {
         successCam.Priority = 12;
         gameplayCam.Priority = 10;
         failedCam.Priority = 10;
+        
+        successCam.Follow = _playerTransform;
+        successCam.LookAt = _playerTransform;
     }
-    public void FailedCamManager()
+    private void FailedCamManager()
     {
         failedCam.Priority = 12;
         successCam.Priority = 10;
