@@ -2971,8 +2971,8 @@ MonoBehaviour:
   m_XDamping: 0
   m_YDamping: 8.6
   m_ZDamping: 1
-  m_ScreenX: 0.74
-  m_ScreenY: 0.4
+  m_ScreenX: 0.54
+  m_ScreenY: 0.38
   m_CameraDistance: 14.15
   m_DeadZoneWidth: 0.184
   m_DeadZoneHeight: 0.244
@@ -2980,7 +2980,7 @@ MonoBehaviour:
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.28
   m_SoftZoneHeight: 0.34
-  m_BiasX: -0.1199997
+  m_BiasX: -0.1200003
   m_BiasY: -0.06999975
   m_CenterOnActivate: 1
   m_GroupFramingMode: 2
@@ -3047,7 +3047,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5019.4
-  field of view: 36
+  field of view: 33
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -3072,8 +3072,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1613203774}
-  m_LocalRotation: {x: 0.2207919, y: 0, z: 0, w: 0.975321}
-  m_LocalPosition: {x: -1.45, y: 2.7, z: -6.63}
+  m_LocalRotation: {x: 0.14826389, y: 0.72270924, z: -0.16360603, w: 0.6549368}
+  m_LocalPosition: {x: -14.328816, y: 5.126063, z: 1.4229579}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3163,7 +3163,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -348, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1620946346
@@ -3769,14 +3769,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1914965559}
-  m_LocalRotation: {x: 0.2207919, y: -0, z: -0, w: 0.975321}
-  m_LocalPosition: {x: -1.45, y: 2.7, z: -6.63}
+  m_LocalRotation: {x: 0.14826389, y: 0.72270924, z: -0.16360603, w: 0.6549368}
+  m_LocalPosition: {x: -14.328816, y: 5.126063, z: 1.4229579}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1606560697}
   m_Father: {fileID: 6801480}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 25.511002, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 25.511002, y: 95.633, z: 0}
 --- !u!114 &1914965561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3798,7 +3798,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 36
+    FieldOfView: 33
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5019.4
