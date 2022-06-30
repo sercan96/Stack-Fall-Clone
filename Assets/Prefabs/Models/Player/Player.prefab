@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1397770199203239375}
   - component: {fileID: 1397770199203239372}
   - component: {fileID: 1397770199203239373}
-  - component: {fileID: 1397770199203239370}
   - component: {fileID: 1397770199203239374}
+  - component: {fileID: 1989181795971571768}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1397770199203239371}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.03, y: 2.023, z: -0.82}
+  m_LocalPosition: {x: 2.07, y: 5.48, z: -0.31}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 1397770200620116992}
@@ -60,19 +60,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 1
---- !u!135 &1397770199203239370
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1397770199203239371}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1397770199203239374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,6 +73,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invinsibleParticle: {fileID: 8186086395661212714}
+  playerState: 0
+  win: {fileID: 8300000, guid: 217cd410471f42a45a6d16a1880c4913, type: 3}
+  death: {fileID: 8300000, guid: 1124915e210fd1d47b454812d12fa909, type: 3}
+  idestory: {fileID: 8300000, guid: 6bb9e5dafd92ac049b2c780beeb662ca, type: 3}
+  destory: {fileID: 8300000, guid: ba8c52d213c7bb84cb82c54aeb06d78c, type: 3}
+  bounce: {fileID: 8300000, guid: 12af9d4dd8824d546970d054aac7ac89, type: 3}
+  currentObstacleNumber: 0
+  totalObstacleNumber: 0
+--- !u!135 &1989181795971571768
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397770199203239371}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 1.53, z: 0}
 --- !u!1 &1397770200620116993
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,6 +105,7 @@ GameObject:
   - component: {fileID: 1397770200620116992}
   - component: {fileID: 1397770200620116994}
   - component: {fileID: 1397770200620116995}
+  - component: {fileID: 7546583174849819350}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -112,7 +121,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1397770200620116993}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1397770199203239375}
@@ -165,6 +174,112 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!96 &7546583174849819350
+TrailRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397770200620116993}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Time: 0.2
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.0042918455
+        value: 0.4270872
+        inSlope: -0.38139832
+        outSlope: -0.38139832
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.24561404
+      - serializedVersion: 3
+        time: 0.9699751
+        value: 0
+        inSlope: -0.22140233
+        outSlope: -0.22140233
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.25561917
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 0.9339623, g: 0.3127893, b: 0.3127893, a: 1}
+      key2: {r: 0.9811321, g: 0.9069471, b: 0.24528302, a: 0}
+      key3: {r: 0.98039216, g: 0.24705881, b: 0.86480665, a: 0}
+      key4: {r: 0.2470588, g: 0.46911368, b: 0.98039216, a: 0}
+      key5: {r: 0.2470588, g: 0.98039216, b: 0.61684376, a: 0}
+      key6: {r: 0.78762984, g: 0.9528302, b: 0.1033731, a: 0}
+      key7: {r: 0.23789316, g: 0.24528301, b: 0.20710216, a: 0}
+      ctime0: 0
+      ctime1: 8288
+      ctime2: 15613
+      ctime3: 23130
+      ctime4: 30647
+      ctime5: 37972
+      ctime6: 47031
+      ctime7: 58018
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 8
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
+  m_Emitting: 1
 --- !u!1001 &8186683689478963648
 PrefabInstance:
   m_ObjectHideFlags: 0
