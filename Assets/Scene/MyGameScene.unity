@@ -3320,6 +3320,9 @@ MonoBehaviour:
   levelSpawner: {fileID: 762180177}
   currentLevelText: {fileID: 1256145926}
   easyType: 16
+  winparticle: {fileID: 421167128562123445, guid: 78b10f4e42074744ea3a4c883777e1bf,
+    type: 3}
+  isWin: 1
 --- !u!4 &1761567064
 Transform:
   m_ObjectHideFlags: 0

@@ -83,6 +83,7 @@ MonoBehaviour:
   currentObstacleNumber: 0
   totalObstacleNumber: 0
   explosionParticle: {fileID: 2074828998679484633}
+  splash: {fileID: 5376808667266551751, guid: 0a05de5742d4264418255ad0caf2f85e, type: 3}
 --- !u!135 &1989181795971571768
 SphereCollider:
   m_ObjectHideFlags: 0

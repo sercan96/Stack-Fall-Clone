@@ -33,6 +33,9 @@ public class GameUI : MonoBehaviour
     private bool _buttonSettingBo;
     public  Text currentLevelText;
     public Ease easyType;
+    public GameObject winparticle;
+    
+    public bool isWin = true;
 
     void OnEnable()
     {
@@ -40,6 +43,7 @@ public class GameUI : MonoBehaviour
         EventManager.onLevelFailed += CloseInvincableTimer;
         EventManager.onLevelSuccess += CurrentLevelTxT;
         EventManager.onLevelFailed += CurrentLevelTxT;
+        EventManager.onLevelSuccess += WinParticle;
     }
 
     void OnDisable()
@@ -48,6 +52,7 @@ public class GameUI : MonoBehaviour
         EventManager.onLevelFailed -= CloseInvincableTimer;
         EventManager.onLevelSuccess -= CurrentLevelTxT;
         EventManager.onLevelFailed -= CurrentLevelTxT;
+        EventManager.onLevelSuccess -= WinParticle;
     }
     void Awake()
     {
@@ -132,6 +137,16 @@ public class GameUI : MonoBehaviour
     public void CurrentLevelTxT()
     {
         currentLevelText.text = "Level " + PlayerPrefs.GetInt("Level"); // O anki leveli al.
+    }
+    
+    public void WinParticle()
+    {
+        Vector3 dir = new Vector3(0f, 3f, 0f);
+        if (isWin)
+        {
+            Instantiate(winparticle,levelSpawner.winprefab.transform.position + dir,Quaternion.identity,levelSpawner.transform);
+            isWin = false;
+        }
     }
 }
              

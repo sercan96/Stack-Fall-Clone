@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public int currentObstacleNumber;
     public int totalObstacleNumber;
     public GameObject explosionParticle;
+    public GameObject splash;
     
  
     private Rigidbody _rigidbody;
@@ -27,8 +28,6 @@ public class PlayerController : MonoBehaviour
     private bool _gameState;
     private bool _invinsableState;
     
-
-
     
     void Awake()
     {
@@ -92,6 +91,7 @@ public class PlayerController : MonoBehaviour
         {
             _rigidbody.velocity = new Vector3(0f, 30f * Time.fixedDeltaTime * 7f, 0f);
             AudioManager.Instance.PlayClipFx(bounce,0.5f);
+            CreateSplash();
         }
     }
     
@@ -211,5 +211,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void CreateSplash()
+    {
+        GameObject splashGo = Instantiate(splash, gameObject.transform.position - new Vector3(0f, -0.473f, 0f), 
+            splash.transform.rotation,_levelSpawner.transform);
+        SpriteRenderer spriteRenderer = splashGo.GetComponent<SpriteRenderer>();
+        spriteRenderer.color = Random.ColorHSV(0, 1, 0.5f, 1, 1, 1) + Color.gray;
+        Destroy(splashGo,0.2f);
+    }
     
+
 }
